@@ -17,6 +17,9 @@ cmake ..
 
 make
 
+If successful, you’ll get an executable:
+./audio_tool
+
 Usage
 -----
 ./audio_tool -i input.wav -o output.wav [--pitch <semitones>] [--lowshelf <freq> <gain_db> <Q>] [--peak <freq> <gain_db> <Q>] [--hp <freq> <Q>]
