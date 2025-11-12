@@ -12,5 +12,19 @@ On Debian/Ubuntu:
 Build
 -----
 mkdir build && cd build
+
 cmake ..
+
 make
+
+Usage
+-----
+./audio_tool -i input.wav -o output.wav [--pitch <semitones>] [--lowshelf <freq> <gain_db> <Q>] [--peak <freq> <gain_db> <Q>] [--hp <freq> <Q>]
+
+Examples
+--------
+# Raise pitch by 3 semitones and add bass boost at 100 Hz +6 dB
+./audio_tool -i in.wav -o out.wav --pitch 3 --lowshelf 100 6 0.7
+
+# Apply a peaking EQ at 1000 Hz -3 dB
+./audio_tool -i in.wav -o out.wav --peak 1000 -3 1.0
