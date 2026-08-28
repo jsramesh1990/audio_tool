@@ -73,30 +73,30 @@ The Verdin iMX8MP is a powerful module suitable for:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    Verdin iMX8MP Module                        │
+│                    Verdin iMX8MP Module                         │
 ├─────────────────────────────────────────────────────────────────┤
-│  CPU:   Arm Cortex-A53 @ 1.8GHz (Quad-core)                   │
-│  GPU:   GC7000L/Vivante (OpenGL ES 3.1, Vulkan)              │
-│  NPU:   2.3 TOPS (Neural Processing Unit)                    │
-│  RAM:   2GB/4GB/8GB LPDDR4                                   │
-│  Storage: 8GB/16GB/32GB eMMC                                │
+│  CPU:   Arm Cortex-A53 @ 1.8GHz (Quad-core)                     │
+│  GPU:   GC7000L/Vivante (OpenGL ES 3.1, Vulkan)                 │
+│  NPU:   2.3 TOPS (Neural Processing Unit)                       │
+│  RAM:   2GB/4GB/8GB LPDDR4                                      │
+│  Storage: 8GB/16GB/32GB eMMC                                    │
 ├─────────────────────────────────────────────────────────────────┤
 │                    Audio Subsystem                              │
 ├─────────────────────────────────────────────────────────────────┤
-│  I2S:   SAI1, SAI3 (I2S Audio Interface)                     │
-│  Codec: NAU8822 / WM8904 (Optional)                          │
-│  SPDIF: Digital Audio Output (Optional)                      │
-│  MCLK:  12.288MHz (48kHz) / 11.2896MHz (44.1kHz)            │
+│  I2S:   SAI1, SAI3 (I2S Audio Interface)                        │
+│  Codec: NAU8822 / WM8904 (Optional)                             │
+│  SPDIF: Digital Audio Output (Optional)                         │
+│  MCLK:  12.288MHz (48kHz) / 11.2896MHz (44.1kHz)                │
 ├─────────────────────────────────────────────────────────────────┤
-│                    Connectivity                                │
+│                    Connectivity                                 │
 ├─────────────────────────────────────────────────────────────────┤
-│  Ethernet: 2x Gigabit (with TSN support)                     │
-│  USB:     2x USB 2.0, 1x USB 3.0                           │
-│  Display:  HDMI 2.0a, MIPI-DSI, LVDS                        │
-│  I2C:     4x I2C Bus                                        │
-│  SPI:     3x SPI                                            │
-│  UART:    4x UART                                           │
-│  GPIO:    Multiple GPIO pins                                │
+│  Ethernet: 2x Gigabit (with TSN support)                        │
+│  USB:     2x USB 2.0, 1x USB 3.0                                │
+│  Display:  HDMI 2.0a, MIPI-DSI, LVDS                            │
+│  I2C:     4x I2C Bus                                            │
+│  SPI:     3x SPI                                                │
+│  UART:    4x UART                                               │
+│  GPIO:    Multiple GPIO pins                                    │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -140,21 +140,21 @@ SAI1 Interface (Primary Audio):
 ┌─────────────────────────────────────────────┐
 │ Pin  | Function  | Description              │
 ├─────────────────────────────────────────────┤
-│ SAI1_MCLK  | Master Clock  | 12.288MHz     │
-│ SAI1_TXC   | TX Clock     | BCLK for TX    │
-│ SAI1_TXD0  | TX Data      | Audio output   │
-│ SAI1_TXFS  | TX Frame Sync| LR clock       │
-│ SAI1_RXC   | RX Clock     | BCLK for RX    │
-│ SAI1_RXD0  | RX Data      | Audio input    │
-│ SAI1_RXFS  | RX Frame Sync| LR clock       │
+│ SAI1_MCLK  | Master Clock  | 12.288MHz      │
+│ SAI1_TXC   | TX Clock     | BCLK for TX     │
+│ SAI1_TXD0  | TX Data      | Audio output    │
+│ SAI1_TXFS  | TX Frame Sync| LR clock        │
+│ SAI1_RXC   | RX Clock     | BCLK for RX     │
+│ SAI1_RXD0  | RX Data      | Audio input     │
+│ SAI1_RXFS  | RX Frame Sync| LR clock        │
 └─────────────────────────────────────────────┘
 
 I2C3 Interface (Codec Control):
 ┌─────────────────────────────────────────────┐
 │ Pin  | Function  | Description              │
 ├─────────────────────────────────────────────┤
-│ I2C3_SDA   | Data        | I2C Data line   │
-│ I2C3_SCL   | Clock       | I2C Clock line  │
+│ I2C3_SDA   | Data        | I2C Data line    │
+│ I2C3_SCL   | Clock       | I2C Clock line   │
 └─────────────────────────────────────────────┘
 ```
 
@@ -166,27 +166,27 @@ I2C3 Interface (Codec Control):
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    Application Layer                           │
+│                    Application Layer                            │
 ├─────────────────────────────────────────────────────────────────┤
-│  audio_player  │  test_audio  │  Custom Applications           │
+│  audio_player  │  test_audio  │  Custom Applications            │
 ├─────────────────────────────────────────────────────────────────┤
-│                    Audio Engine (Our Code)                     │
+│                    Audio Engine (Our Code)                      │
 ├─────────────────────────────────────────────────────────────────┤
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐        │
-│  │ Audio Engine │  │ WAV Loader   │  │   Utils     │        │
-│  │  (Core API)  │  │  (File I/O)  │  │ (Support)   │        │
-│  └──────────────┘  └──────────────┘  └──────────────┘        │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │ Audio Engine │  │ WAV Loader   │  │   Utils     │            │
+│  │  (Core API)  │  │  (File I/O)  │  │ (Support)   │            │
+│  └──────────────┘  └──────────────┘  └──────────────┘           │
 ├─────────────────────────────────────────────────────────────────┤
-│                    ALSA (Advanced Linux Sound Architecture)    │
+│                    ALSA (Advanced Linux Sound Architecture)     │
 ├─────────────────────────────────────────────────────────────────┤
-│                    Linux Kernel (Device Drivers)               │
+│                    Linux Kernel (Device Drivers)                │
 ├─────────────────────────────────────────────────────────────────┤
-│                    Hardware (Verdin iMX8MP)                    │
+│                    Hardware (Verdin iMX8MP)                     │
 ├─────────────────────────────────────────────────────────────────┤
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐        │
-│  │ SAI1 I2S    │  │ NAU8822 Codec│  │   Speakers   │        │
-│  │ Interface   │  │ (Audio Codec)│  │   Headphone  │        │
-│  └──────────────┘  └──────────────┘  └──────────────┘        │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │ SAI1 I2S    │  │ NAU8822 Codec│  │   Speakers   │            │
+│  │ Interface   │  │ (Audio Codec)│  │   Headphone  │            │
+│  └──────────────┘  └──────────────┘  └──────────────┘           │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -1058,15 +1058,15 @@ int audio_function_name(int parameter1, char* parameter2)
 
 ##  Project Status
 
-| Component | Status | Version | Test Coverage |
-|-----------|--------|---------|---------------|
-| Audio Engine | ✅ Production | 1.4.0 | 95% |
-| WAV Loader | ✅ Production | 1.4.0 | 92% |
-| Utilities | ✅ Production | 1.4.0 | 90% |
-| Device Tree | ✅ Stable | 1.0.0 | 85% |
-| Documentation | ✅ Complete | 1.0.0 | 100% |
-| Tests | ✅ Stable | 1.0.0 | 88% |
-| Deployment | ✅ Production | 1.0.0 | 90% |
+| Component      | Status        | Version | Test Coverage |
+|----------------|---------------|---------|---------------|
+| Audio Engine   | ✅ Production | 1.4.0   | 95%           |
+| WAV Loader     | ✅ Production | 1.4.0   | 92%           |
+| Utilities      | ✅ Production | 1.4.0   | 90%           |
+| Device Tree    | ✅ Stable     | 1.0.0   | 85%           |
+| Documentation  | ✅ Complete   | 1.0.0   | 100%          |
+| Tests          | ✅ Stable     | 1.0.0   | 88%           |
+| Deployment     | ✅ Production | 1.0.0   | 90%           |
 
 ---
 
