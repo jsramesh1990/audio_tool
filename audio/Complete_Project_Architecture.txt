@@ -1,6 +1,3 @@
-If your goal is to build an **Audio/AI product on Toradex Verdin iMX8M Plus using Yocto BSP**, then I would recommend following the same flow used in industry projects.
-
----
 
 # Phase 1: Hardware Bring-Up
 
